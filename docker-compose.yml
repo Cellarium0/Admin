@@ -1,0 +1,13 @@
+version: '3.6'
+
+
+services:
+  cellarium_admin:
+    container_name: ${CELLARIUM_ADMIN_NAME}
+    image: ${CELLARIUM_ADMIN_IMG}:${CELLARIUM_ADMIN_VERSION_PROD}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8003:80
+    restart: unless-stopped

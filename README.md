@@ -30,8 +30,8 @@
 
 ## Access
 
-- [Cellarium Admin Development (Local)](http://localhost:8002)
-- [Cellarium Admin Production (Local)](http://localhost:8002)
+- [Cellarium Admin Development (Local)](http://localhost:8003)
+- [Cellarium Admin Production (Local)](http://localhost:8003)
 - [Cellarium Admin Production (Netlify)](https://cellarium-admin.netlify.app/)
 
 ## Documentations
@@ -51,9 +51,9 @@ All requirements are in file **/src/package.json** :
   - Docker Compose
   - Netlify
   - AWS ?
-- **Framework** : ???
-- **CSS Framework** : ???
-- **Request Engine** : Axios
+- **Framework** : React
+- **CSS Framework** : MUI
+- **Admin Framework** : React Admin with some API Provider
 
 ## Install
 
@@ -72,20 +72,14 @@ All requirements are in file **/src/package.json** :
 
     cd src
 
-    # Synthax Check
-    TODO
-
     # Start Server
-    TODO
+    npm start
 
 ### Deploy : Docker
 
     # Development
     docker-compose -f docker-compose.dev.yml up
     docker-compose -f docker-compose.dev.yml up -d
-
-    # Synthax Check
-    docker-compose -f docker-compose.dev.yml run cellarium_admin_dev TODO
 
     # Production
     docker-compose up
@@ -96,7 +90,7 @@ All requirements are in file **/src/package.json** :
 ### Production Build : NPM
 
     cd src
-    TODO
+    npm build
 
 ### Production Build : Docker
 
@@ -105,7 +99,6 @@ All requirements are in file **/src/package.json** :
 ## Contributors
 
 - ProgOwer
-- TODO
 
 ## Licence
 

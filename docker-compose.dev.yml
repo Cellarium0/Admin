@@ -1,0 +1,22 @@
+version: '3.6'
+
+
+volumes:
+  cellarium_admin_modules:
+
+
+services:
+  cellarium_admin_dev:
+    container_name: ${CELLARIUM_ADMIN_NAME}_dev
+    image: ${CELLARIUM_ADMIN_IMG}:${CELLARIUM_ADMIN_VERSION_DEV}
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      - REACT_APP_API_URL=${CELLARIUM_ADMIN_API_URL}
+    volumes:
+      - cellarium_admin_modules:/app/node_modules
+      - ./src:/app
+    ports:
+      - 8003:3000
+    restart: unless-stopped
