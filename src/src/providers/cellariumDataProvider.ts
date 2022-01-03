@@ -44,7 +44,7 @@ function deleteExtraParams(dict) {
  *
  * export default App;
  */
-export default (apiUrl, httpClient = fetchUtils.fetchJson): DataProvider => ({
+const cellariumDataProvider = (apiUrl, httpClient = fetchUtils.fetchJson): DataProvider => ({
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
         const { field, order } = params.sort;
@@ -154,3 +154,5 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson): DataProvider => ({
             )
         ).then(responses => ({ data: responses.map(({ json }) => json.id) })),
 });
+
+export default cellariumDataProvider;
