@@ -29,9 +29,6 @@ const cellariumAuthProvider = {
             .then(auth => {
                 localStorage.setItem('admin_token', auth.access_token);
                 localStorage.setItem('permissions', scope);
-            })
-            .catch(() => {
-                throw new Error('Network error')
             });
     },
     logout: () => {
